@@ -5,7 +5,7 @@
 */
 
 $(function() {
-
+app.use('/uploads', express.static('uploads'));
 	// Vars.
 		var	$window = $(window),
 			$body = $('body'),
