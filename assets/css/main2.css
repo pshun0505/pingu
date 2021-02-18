@@ -1421,6 +1421,16 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 
 }
 /*sunghun*/
+#atag1{
+    text-align: right;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 10px;
+    margin-top: 10px;
+}
 #wrapper{
     max-width: 68rem;
     margin: 5rem auto;

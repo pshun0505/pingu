@@ -1,0 +1,175 @@
+@import "reset_css.css";
+@font-face {
+    font-family: 'MapoGoldenPier';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    *{margin:0;padding:0;} 
+    ul,li{list-style:none;}
+    body{
+        /* background-color: #FAF1D6; */
+        background-color: #fadee1;
+        font-family: 'MapoGoldenPier';
+        overflow: hidden;
+    }
+    a{
+        text-align: right;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+    div{
+        position: relative;
+    }
+    .date{text-align: center;
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(1, 1, 1, 0.7);
+        padding-top: 9rem;
+        position: relative;}
+    .date ul{
+        width: calc(100%*8);
+        display: flex;
+        transition: 1s;}
+    .date li{
+        width: calc(100%*8);
+        height: 100px;
+        text-align: center;}
+    .date input{display:none;}
+    .date .bullet{
+        position: absolute;
+        left:0;
+        right: 0;
+        top: 88vh;
+        text-align: center;
+        z-index: 10;}
+    .date .bullet label{ 
+        width:10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 2px solid #666;
+        background:#fadee1;
+        display: inline-block;
+        font-size: 0;
+        transition: 0.5s;
+        cursor: pointer;}
+    /* 슬라이드 조작 */
+    #pos1:checked ~ ul{margin-left:0;}
+    #pos2:checked ~ ul{margin-left:-100%;}
+    #pos3:checked ~ ul{margin-left:-200%;}
+    #pos4:checked ~ ul{margin-left:-300%;}
+    #pos5:checked ~ ul{margin-left:-400%;}
+    #pos6:checked ~ ul{margin-left:-500%;}
+    #pos7:checked ~ ul{margin-left:-600%;}
+    #pos8:checked ~ ul{margin-left:-700%;}
+    /* bullet 조작 */
+    #pos1:checked ~ .bullet label:nth-child(1),
+    #pos2:checked ~ .bullet label:nth-child(2),
+    #pos3:checked ~ .bullet label:nth-child(3),
+    #pos4:checked ~ .bullet label:nth-child(4),
+    #pos5:checked ~ .bullet label:nth-child(5),
+    #pos6:checked ~ .bullet label:nth-child(6),
+    #pos7:checked ~ .bullet label:nth-child(7),
+    #pos8:checked ~ .bullet label:nth-child(8){background:#666;}
+    /* 슬라이드 조작 */
+    #pos1:checked ~ #mainImg {margin-left:0;}
+    #pos2:checked ~ #mainImg {margin-left:-100%;}
+    #pos3:checked ~ #mainImg {margin-left:-200%;}
+    #pos4:checked ~ #mainImg {margin-left:-300%;}
+    #pos5:checked ~ #mainImg {margin-left:-400%;}
+    #pos6:checked ~ #mainImg {margin-left:-500%;}
+    #pos7:checked ~ #mainImg {margin-left:-600%;}
+    #pos8:checked ~ #mainImg {margin-left:-700%;}
+    
+
+/* .date .MainImg{
+    display: inline-block;
+    background-color: #ddd2f1;
+    border-radius: 100%;
+    padding: 1rem;
+    } */
+/* #Main .MainImg2{
+    display: inline-block;
+    background-color: rgba(181, 232, 226, 0.5);
+    border-radius: 100%;
+    padding: 1.5rem;
+} */
+/* .mainImg{
+    position: relative;
+    height: 25rem;
+    width: auto;
+    border-radius: 50%;
+    margin-top: 5rem;
+} */
+#mainImg{
+    /* position: relative; */
+    width: calc(100%*8);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    transition: 1s;
+}
+#mainImg img{
+    /* position: absolute; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 25rem;
+    width: auto;
+    border-radius: 50%;
+
+}
+.fadein{
+    animation: animA 1s 1 alternate;
+}
+.fadeout{
+    animation: animB 1s 1 alternate;
+    display: none;
+}
+@keyframes animA {
+    0%, 25%{
+        opacity: 0;
+        z-index: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+@keyframes animB {
+    0%, 25%{
+        opacity: 1;
+        z-index: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+
+#left {
+    position: fixed;
+    left: 0px;
+    width: 35vw;
+    height: 30rem;
+    align-items: center;
+    
+}
+
+#right {
+    position: fixed;
+    left: 65vw;
+    width: 35vw;
+    height: 30rem;
+    align-items: center;
+}
